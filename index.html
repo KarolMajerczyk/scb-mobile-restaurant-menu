@@ -7,6 +7,88 @@
     <title>Mobile restaurant menu</title>
   </head>
   <body>
+    <header>
+      <div class="container">
+        <div class="hero">
+          <h1>Jimmy's Dinner</h1>
+          <p>The best burgers and pizzas in town.</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="menu">
+          <div class="menu-item">
+            <p class="item-preview">🍕</p>
+            <div class="item-details">
+              <p>Pizza</p>
+              <p>pepperoni, mushrom, mozarella</p>
+              <p>$14</p>
+            </div>
+            <button class="btn btn-round">+</button>
+          </div>
+          <div class="menu-item">
+            <p class="item-preview">🍔</p>
+            <div class="item-details">
+              <p>Hamburger</p>
+              <p>beef, cheese, lettuce</p>
+              <p>$12</p>
+            </div>
+            <button class="btn btn-round">+</button>
+          </div>
+          <div class="menu-item">
+            <p class="item-preview">🍺</p>
+            <div class="item-details">
+              <p>Beer</p>
+              <p>grain, hops, yeast, water</p>
+              <p>$12</p>
+            </div>
+            <button class="btn btn-round">+</button>
+          </div>
+        </div>
+        <div class="customer-order">
+          <h2>Your order</h2>
+          <div class="order-details">
+            <div class="ordered-items">
+              <div class="order-item">
+                <p>Pizza</p>
+                <button>remove</button>
+                <p>$14</p>
+              </div>
+              <div class="order-item">
+                <p>Beer</p>
+                <button>remove</button>
+                <p>$12</p>
+              </div>
+            </div>
+            <div class="order-summary">
+              <p>Total price:</p>
+              <p id="order-value">$26</p>
+            </div>
+          </div>
+          <button id="submit-order" class="btn btn-regular">
+            Complete order
+          </button>
+        </div>
+        <div class="payment-modal">
+          <h2>Enter card details</h2>
+          <form action="#">
+            <input
+              type="text"
+              aria-label="name"
+              placeholder="Enter your name"
+            />
+            <input
+              type="text"
+              aria-label="card-number"
+              placeholder="Enter card number"
+            />
+            <input type="text" aria-label="card-cvv" placeholder="Enter CVV" />
+            <button class="btn btn-regular" type="submit">Pay</button>
+          </form>
+        </div>
+      </div>
+    </main>
     <script src="index.js" type="module"></script>
   </body>
 </html>
