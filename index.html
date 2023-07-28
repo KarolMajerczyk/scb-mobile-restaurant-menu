@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="stylesheet" href="index.css" />
     <title>Mobile restaurant menu</title>
   </head>
@@ -10,82 +21,62 @@
     <header>
       <div class="container">
         <div class="hero">
-          <h1>Jimmy's Dinner</h1>
-          <p>The best burgers and pizzas in town.</p>
+          <h1 class="hero-title">Jimmy's Dinner</h1>
+          <p class="hero-description">The best burgers and pizzas in town.</p>
         </div>
       </div>
     </header>
     <main>
       <div class="container">
-        <div class="menu">
-          <div class="menu-item">
-            <p class="item-preview">🍕</p>
-            <div class="item-details">
-              <p>Pizza</p>
-              <p>pepperoni, mushrom, mozarella</p>
-              <p>$14</p>
-            </div>
-            <button class="btn btn-round">+</button>
-          </div>
-          <div class="menu-item">
-            <p class="item-preview">🍔</p>
-            <div class="item-details">
-              <p>Hamburger</p>
-              <p>beef, cheese, lettuce</p>
-              <p>$12</p>
-            </div>
-            <button class="btn btn-round">+</button>
-          </div>
-          <div class="menu-item">
-            <p class="item-preview">🍺</p>
-            <div class="item-details">
-              <p>Beer</p>
-              <p>grain, hops, yeast, water</p>
-              <p>$12</p>
-            </div>
-            <button class="btn btn-round">+</button>
-          </div>
-        </div>
-        <div class="customer-order">
-          <h2>Your order</h2>
-          <div class="order-details">
-            <div class="ordered-items">
-              <div class="order-item">
-                <p>Pizza</p>
-                <button>remove</button>
-                <p>$14</p>
-              </div>
-              <div class="order-item">
-                <p>Beer</p>
-                <button>remove</button>
-                <p>$12</p>
+        <div class="dashboard">
+          <!-- Food menu -->
+          <div class="menu"></div>
+          <!-- Shopping cart -->
+          <div class="shopping-cart hidden">
+            <h2 class="shopping-cart-label">Your order</h2>
+            <div class="order-details">
+              <div class="order-items"></div>
+              <div class="order-summary">
+                <p>Total price:</p>
+                <p id="order-value"></p>
               </div>
             </div>
-            <div class="order-summary">
-              <p>Total price:</p>
-              <p id="order-value">$26</p>
-            </div>
+            <button id="submit-order" class="btn btn-regular" disabled>
+              Complete order
+            </button>
           </div>
-          <button id="submit-order" class="btn btn-regular">
-            Complete order
-          </button>
-        </div>
-        <div class="payment-modal">
-          <h2>Enter card details</h2>
-          <form action="#">
-            <input
-              type="text"
-              aria-label="name"
-              placeholder="Enter your name"
-            />
-            <input
-              type="text"
-              aria-label="card-number"
-              placeholder="Enter card number"
-            />
-            <input type="text" aria-label="card-cvv" placeholder="Enter CVV" />
-            <button class="btn btn-regular" type="submit">Pay</button>
-          </form>
+          <!-- Payment modal -->
+          <div class="payment-modal hidden">
+            <h2 class="payment-label">Enter card details</h2>
+            <form id="payment-form" class="payment-form" action="#">
+              <input
+                type="text"
+                aria-label="name"
+                placeholder="Enter your name"
+                name="full-name"
+              />
+              <input
+                type="text"
+                aria-label="card-number"
+                placeholder="Enter card number"
+                name="card-number"
+              />
+              <input
+                type="text"
+                aria-label="card-cvv"
+                placeholder="Enter CVV"
+                name="card-cvv"
+              />
+              <div class="payment-form-btns">
+                <button id="pay-btn" class="btn btn-regular" type="submit">
+                  Pay
+                </button>
+                <button id="close-btn" class="btn btn-regular" type="button">
+                  Close
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </main>
